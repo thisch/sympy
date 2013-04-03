@@ -4,8 +4,6 @@ from sympy import symbols,sin,cos
 from sympy.ga.ga_print import xdvi,Get_Program,Print_Function
 from sympy.ga.ga import MV,Format
 
-Format()
-
 def Maxwells_Equations_in_Geometric_Calculus():
     Print_Function()
     X = symbols('t x y z')
@@ -91,6 +89,7 @@ def dummy():
     return
 
 def main():
+    Format()
     Get_Program()
 
     Maxwells_Equations_in_Geometric_Calculus()

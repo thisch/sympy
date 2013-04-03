@@ -21,7 +21,6 @@ def make_vector(a,n = 3):
         a = MV(sym_lst,'vector')
     return(F(a))
 
-Format()
 
 def basic_multivector_operations_3D():
     Print_Function()
@@ -430,6 +429,7 @@ def dummy():
     return
 
 def main():
+    Format()
     Get_Program()
 
     basic_multivector_operations_3D()

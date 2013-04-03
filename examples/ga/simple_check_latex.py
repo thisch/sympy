@@ -1,7 +1,6 @@
 from sympy.ga.ga_print import xdvi,Get_Program,Print_Function
 from sympy.ga.ga import MV,Format
 
-Format(ipy=True) #For sympy-bot testing default for pdf is ipy=False
 
 def basic_multivector_operations_3D():
     Print_Function()
@@ -51,9 +50,14 @@ def basic_multivector_operations_2D():
 def dummy():
     return
 
-Get_Program(True)
+def main():
+    Format()
+    Get_Program(True)
 
-basic_multivector_operations_3D()
-basic_multivector_operations_2D()
+    basic_multivector_operations_3D()
+    basic_multivector_operations_2D()
 
-xdvi('simple_test_latex.tex')
+    xdvi('simple_test_latex.tex')
+
+if __name__ == "__main__":
+    main()

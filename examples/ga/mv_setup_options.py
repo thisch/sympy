@@ -2,8 +2,6 @@ from sympy import symbols
 from sympy.ga.ga import MV
 from sympy.ga.ga_print import enhance_print,Get_Program,Print_Function
 
-enhance_print()
-
 def MV_setup_options():
     Print_Function()
 
@@ -30,6 +28,7 @@ def dummy():
     return
 
 def main():
+    enhance_print()
     Get_Program(True)
     MV_setup_options()
     return

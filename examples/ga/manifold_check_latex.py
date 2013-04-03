@@ -6,8 +6,6 @@ from sympy.ga.ga_print import xdvi,Get_Program,Print_Function
 from sympy import symbols,log,simplify,diff,cos,sin
 from sympy.ga.manifold import Manifold
 
-Format()
-
 def Test_Reciprocal_Frame():
     Print_Function()
     coords = symbols('x y z')
@@ -137,6 +135,7 @@ def dummy():
     return
 
 def main():
+    Format()
     Get_Program()
 
     Test_Reciprocal_Frame()

@@ -542,20 +542,7 @@ def _doctest(*paths, **kwargs):
         "doc/src/modules/plotting.rst",  # generates live plots
         "sympy/statistics",                # prints a deprecation
         "doc/src/modules/statistics.rst",  # warning (the module is deprecated)
-        "sympy/utilities/compilef.py",  # needs tcc
-        "sympy/utilities/autowrap.py",  # needs installed compiler
-        "sympy/conftest.py",  # needs py.test
-        "sympy/utilities/benchmarking.py",  # needs py.test
-        "examples/advanced/fem.py", #needs tcc
-        #Following examples are not docstrings and require pdflatex
-        "examples/ga/latex_check.py",
-        "examples/ga/manifold_check_latex.py",
-        "examples/ga/matrix_latex.py",
-        "examples/ga/physics_check_latex.py",
-        "examples/ga/print_check_latex.py",
-        "examples/ga/products_latex.py",
-        "examples/ga/simple_check_latex.py",
-        "examples/ga/spherical_latex.py"
+        "sympy/utilities/compilef.py"  # needs tcc
     ])
 
     if import_module('numpy') is None:
@@ -568,8 +555,7 @@ def _doctest(*paths, **kwargs):
             "examples/advanced/autowrap_ufuncify.py",
             "examples/intermediate/sample.py",
             "examples/intermediate/mplot2d.py",
-            "examples/intermediate/mplot3d.py",
-            "examples/ga/manifold_check.py"
+            "examples/intermediate/mplot3d.py"
         ])
     else:
         if import_module('matplotlib') is None:
@@ -1204,10 +1190,11 @@ class SymPyDocTestFinder(DocTestFinder):
                     if not in_module:
                         # double check in case this function is decorated
                         # and just appears to come from a different module.
-                        pat = r'\s*(def|class)\s+%s\s*\(' % rawname
-                        PAT = pre.compile(pat)
-                        in_module = any(
-                            PAT.match(line) for line in source_lines)
+                        # pat = r'\s*(def|class)\s+%s\s*\(' % rawname
+                        # PAT = pre.compile(pat)
+                        # in_module = any(
+                        #     PAT.match(line) for line in source_lines)
+                        pass
                     if in_module:
                         try:
                             valname = '%s.%s' % (name, rawname)
